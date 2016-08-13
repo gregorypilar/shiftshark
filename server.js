@@ -29,7 +29,7 @@ var Availability = require('./models/availability');
 // CONNECT DB //
 ////////////////
 
-var connection_string = 'localhost:27017/shiftshark';
+var connection_string = 'gpmongodb.eastus2.cloudapp.azure.com:27017';
 
 if (process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
   connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ':' +
