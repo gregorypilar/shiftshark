@@ -45,7 +45,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function callback () {
-  app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080,
+  app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8081,
     process.env.OPENSHIFT_NODEJS_IP);
 });
 
