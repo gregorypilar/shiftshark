@@ -74,7 +74,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-    secret:"keyboard cat", //secrets.session_secret,
+    secret:"YC7w1QOa*zrWH]41Cb*=", //secrets.session_secret,
     resave: true,
     saveUninitialized: true
 }));
@@ -90,8 +90,8 @@ app.use(express.static(path.join(__dirname, 'tests')));
 var transporter = nodemailer.createTransport(smtpTransport({
     service: 'Gmail',
     auth: {
-      user: 'noreplyshiftshark@gmail.com',
-      pass: "secrets.mail_password"
+      user: 'gregoryg3@gmail.com',
+      pass:"Greg260689" //"secrets.mail_password"
     }
 }));
 
