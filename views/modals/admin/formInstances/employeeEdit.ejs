@@ -1,15 +1,15 @@
 <div class='ui hidden edit employee form'>
-    <label>Employee:</label>
+    <label>Publicador:</label>
     <div class='ui selection dropdown'>
-        <div class='default text'>Select Employee</div>
+        <div class='default text'>Seleccione el publicador</div>
         <i class='dropdown icon'></i>
         <div class='menu employeeList' style='overflow:auto;max-height:100px;'>
             <%= include ../../../util/employeesDropdown.ejs %>
         </div>
     </div>
-    <label></br></br>Name:</label>
+    <label></br></br>Nombre:</label>
     <div class='ui left labeled icon input field'>
-        <input type='text' name='username' placeholder='Name'>
+        <input type='text' name='username' placeholder='Nombre'>
         <i class='user icon'></i>
     </div>
     <div class='inline fields'>
@@ -17,7 +17,7 @@
         <div class='field'>
             <div class='ui radio checkbox'>
                 <input type='radio' name='adminPrivileges'>
-                <label>Yes</label>
+                <label>Sí</label>
             </div>
         </div>
         <div class='field'>
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class='fright submitButtons'>
-        <div class='ui red cancel button'>Cancel</div>
-        <div class='ui black submit button'>Edit</div>
+        <div class='ui red cancel button'>Cancelar</div>
+        <div class='ui black submit button'>Editar</div>
     </div>
 </div>

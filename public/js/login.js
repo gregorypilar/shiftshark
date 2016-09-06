@@ -8,11 +8,11 @@ $(document).ready(function() {
       rules: [
       {
         type  : 'empty',
-        prompt: 'Please enter your email address'
+        prompt: 'Por favor, introduzca su dirección de correo electrónico'
       }, 
       {
         type: 'email',
-        prompt: 'Please enter a valid email address'
+        prompt: 'Por favor, introduce una dirección de correo electrónico válida'
       }
       ]
     },
@@ -21,7 +21,7 @@ $(document).ready(function() {
       rules : [
       {
         type    : 'empty',
-        prompt  : 'Please enter a password'
+        prompt  : 'Porfavor ingrese una contraseña'
       }
       ]
     }
@@ -50,7 +50,7 @@ $(document).ready(function() {
       var failure = function(xhr, status, err) {
         loginForm.removeClass('loading');
         loginForm.removeClass('success');
-        $('.ui.error.message').html('<ul class="list"><li>Error logging in. Please try again</li></ul>');
+        $('.ui.error.message').html('<ul class="list"><li>Error accediendo Por favor, inténtelo de nuevo</li></ul>');
         loginForm.addClass('error');
         (xhr,status,err);
 

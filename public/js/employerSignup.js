@@ -8,7 +8,7 @@ $(document).ready(function() {
       rules: [
         {
           type    : 'empty',
-          prompt  : 'Please enter your first name'
+          prompt  : 'Por favor, introduzca su nombre'
         }
       ]
     },
@@ -17,7 +17,7 @@ $(document).ready(function() {
       rules: [
         {
           type    : 'empty',
-          prompt  : 'Please enter your last name'
+          prompt  : 'Por favor, introduzca su apellido'
         }
       ]
     },
@@ -26,7 +26,7 @@ $(document).ready(function() {
       rules: [
         {
           type    : 'empty',
-          prompt  : 'Please enter a schedule name'
+          prompt  : 'Por favor, introduzca un nombre para la agenda'
         }
       ]
     },
@@ -35,11 +35,11 @@ $(document).ready(function() {
       rules: [
         {
           type    : 'empty',
-          prompt  : 'Please enter your email address'
+          prompt  : 'Por favor, introduzca su dirección de correo electrónico'
         }, 
         {
           type    : 'email',
-          prompt  : 'Please enter a valid email address'
+          prompt  : 'Por favor, introduzca una dirección válida de correo electrónico'
         }
       ]
     },
@@ -48,7 +48,7 @@ $(document).ready(function() {
       rules   : [
         {
           type    : 'empty',
-          prompt  : 'Please enter a password'
+          prompt  : 'Por favor, introduzca una contraseña'
         }
       ]
     },
@@ -57,11 +57,11 @@ $(document).ready(function() {
       rules   : [
         {
           type    : 'empty',
-          prompt  : 'Please enter a password'
+          prompt  : 'Por favor, introduzca una contraseña'
         },
         {
           type    : 'match[password]',
-          prompt  : 'Passwords do not match'
+          prompt  : 'Las contraseñas no coinciden'
         }
       ]
     }
@@ -98,7 +98,7 @@ $(document).ready(function() {
 
       var loginFailure = function(xhr, status, err) {
         loginForm.removeClass('success');
-        $('.ui.error.message').html('<ul class="list"><li>Error logging in. Please try again</li></ul>');
+        $('.ui.error.message').html('<ul class="list"><li>Error de inicio de sesión. Por favor, inténtelo de nuevo</li></ul>');
         $.fancybox.update();
         loginForm.addClass('error');
         (xhr,status,err);
@@ -114,7 +114,7 @@ $(document).ready(function() {
       var signupFailure = function(xhr, status, err) {
         loginForm.removeClass('loading');
         loginForm.removeClass('success');
-        $('.ui.error.message').html('<ul class="list"><li>Error signing up. Please try again</li></ul>');
+        $('.ui.error.message').html('<ul class="list"><li>Error de firmar para arriba. Por favor, inténtelo de nuevo</li></ul>');
         loginForm.addClass('error');
       };
 

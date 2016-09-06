@@ -20,11 +20,11 @@ $(document).ready(function() {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter a start hour'
+          prompt  : 'Por favor, introduzca una hora de inicio'
         },
         {
           type    : 'startTimeBeforeEnd[.ui.modify.trade.form]',
-          prompt  : 'Start time is before or same as end time'
+          prompt  : 'Hora de inicio es antes o el mismo como tiempo final'
         }
       ]
     },
@@ -33,7 +33,7 @@ $(document).ready(function() {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter a start minute'
+          prompt  : 'Por favor, escriba un minuto de inicio'
         }
       ]
     },
@@ -45,7 +45,7 @@ $(document).ready(function() {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter an end hour'
+          prompt  : 'Por favor, introduzca una hora final'
         }
       ]
     },
@@ -54,7 +54,7 @@ $(document).ready(function() {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter an end minute'
+          prompt  : 'Por favor, escriba un final minutos'
         }
       ]
     },

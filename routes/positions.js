@@ -100,7 +100,7 @@ router.get('/:id', function(req, res) {
       if(String(position.schedule) === String(req.user.schedule)) {
         return res.json({ position: { _id: position._id, name: position.name } });
       } else {
-        res.status(403).send('Permission denied. This position is outside of your schedule.');
+        res.status(403).send('Permiso denegado. Esta posición está fuera de su horario.');
       }
     }
   });

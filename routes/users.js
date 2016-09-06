@@ -121,14 +121,14 @@ router.post('/employees/', function(req, res) {
     }
 
     // send employee an email
-    var body = "Welcome to Asignacion de Turnos. An employee account has been \
-      created on your behalf. Please login with the following credentials: \n\n\n" +
+    var body = "Bienvenido a Asignacion de Turnos. Una cuenta ha sido \
+      creada en su nombre. Por favor, inicie sesión con las siguientes credenciales: \n\n\n" +
       "email: " + req.body.email +
-      "\npassword: " + generatedPassword;
+      "\ncontraseña: " + generatedPassword;
     res.mailer.sendMail({
       to: req.body.email,
-      replyTo: 'Asignacion de Turnos@mit.edu',
-      subject: 'Asignacion de Turnos Employee Account',
+      replyTo: 'gregoryg3@gmail.com',
+      subject: 'Asignacion de Turnos',
       text: body
     }, function(err, message) {
       if (err) res.status(400).send('EMAIL_ERR');

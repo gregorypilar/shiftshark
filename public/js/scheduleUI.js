@@ -35,7 +35,7 @@ $(document).on('click', '.cell', function(evt) {
         editRadio.checkbox('enable');
     }
 
-    $('.ownerIndicator').html(ownerName + "'s shift is currently selected.")
+    $('.ownerIndicator').html('El turno de '+ ownerName + "esta seleccionado")
 
 
     $('.modify.form [name="start-month"]').parent().dropdown('set value', startMonth);    

@@ -2,22 +2,22 @@
 
 <div class='ui add employee form'>
     <div class='ui error message'></div>
-    <label>First Name:</label>
+    <label>Primer Nombre:</label>
     <div class='ui left labeled icon input field'>
-        <input type='text' name='firstname' placeholder='First Name'>
+        <input type='text' name='firstname' placeholder='Primer Nombre'>
         <i class='user icon'></i>
     </div>
-    <label>Last Name:</label>
+    <label>Apellido:</label>
     <div class='ui left labeled icon input field'>
         <input type='text' name='lastname' placeholder='Last Name'>
         <i class='user icon'></i>
     </div>
-    <label>Email Address:</label>
+    <label>Dirección De Correo Electrónico:</label>
     <div class='ui left labeled icon input field'>
         <input type='text' name='email' placeholder='email@domain.com'>
         <i class='mail icon'></i>
     </div>
-    <p>The employee will receive an email containing the account password.</p>
+    <p>El publicador recibirá un correo electrónico con la contraseña de la cuenta.</p>
     <% var submit = "Add" %>
     <%= include ../../util/formModules/cancelSubmit.ejs %>
 </div>

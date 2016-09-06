@@ -224,7 +224,7 @@ function time_string (hour) {
   var timestring = "";
   // hour
   if (hour % 12 === 0) {
-    timestring = (hour === 0) ? 'Midnight' : 'Noon';
+    timestring = (hour === 0) ? 'Medianoche' : 'Mediodía';
   } else {
     timestring = String(hour % 12) + ":00";
     // meridian

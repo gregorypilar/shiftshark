@@ -8,11 +8,11 @@ $(document).ready(function() {
       rules: [
         {
           type  : 'empty',
-          prompt: 'Please enter your email address'
+          prompt: 'Por favor, introduzca su dirección de correo electrónico'
         },
         {
           type  : 'email',
-          prompt: 'Please enter a valid email address'
+          prompt: 'Por favor, introduzca una dirección válida de correo electrónico'
         }
       ]
     },
@@ -21,7 +21,7 @@ $(document).ready(function() {
       rules: [
         {
           type  : 'empty',
-          prompt: 'Please enter a name'
+          prompt: 'Por favor, introduzca un nombre'
         }
       ]
     },
@@ -30,7 +30,7 @@ $(document).ready(function() {
       rules: [
         {
           type  : 'empty',
-          prompt: 'Please enter a name'
+          prompt: 'Por favor, introduzca un nombre'
         }
       ]
     }

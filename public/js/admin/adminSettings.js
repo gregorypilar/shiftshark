@@ -95,7 +95,7 @@ $(document).ready(function() {
 
       if (employee == self) {
         // show an error message
-        $('.ui.error.message').html('<ul class="list"><li>No se puede eliminar sus propios privilegios de administrador.</li></ul>');
+        $('.ui.error.message').html('<ul class="list"><li>No  puede eliminar sus propios privilegios de administrador.</li></ul>');
         $form.addClass('error');
         $employee.addClass('error');
         $form.removeClass('loading');

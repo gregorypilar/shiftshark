@@ -201,7 +201,7 @@ rulesGenerator = function(components, selector, recurring) {
       rules: [
         {
           type  : 'empty',
-          prompt: 'Please select an employee'
+          prompt: 'Por favor, seleccione un empleado'
         }
       ]
     },
@@ -210,7 +210,7 @@ rulesGenerator = function(components, selector, recurring) {
       rules: [
         {
           type  : 'empty',
-          prompt: 'Please select an employee'
+          prompt: 'Por favor, seleccione un empleado'
         }
       ]
     },
@@ -219,15 +219,15 @@ rulesGenerator = function(components, selector, recurring) {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter a start time'
+          prompt  : 'Por favor, introduzca una hora de inicio'
         },
         {
           type    : 'validTime',
-          prompt  : 'Not a valid start time'
+          prompt  : 'No es una hora de inicio válida'
         },
         {
           type    : 'startTimeBeforeEnd[' + selector + ']',
-          prompt  : 'Start time is before or same as end time'
+          prompt  : 'Hora de inicio es anterior o igual a la hora de finalización'
         }
       ]
     },
@@ -236,11 +236,11 @@ rulesGenerator = function(components, selector, recurring) {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter an end time'
+          prompt  : 'Por favor, introduzca una hora de finalización'
         },
         {
           type    : 'validTime',
-          prompt  : 'Not a valid end time'
+          prompt  : 'No es un tiempo de finalización válido'
         }
       ]
     },
@@ -249,15 +249,15 @@ rulesGenerator = function(components, selector, recurring) {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter a start time'
+          prompt  : 'Por favor, introduzca una hora de inicio'
         },
         {
           type    : 'validTime',
-          prompt  : 'Not a valid start time'
+          prompt  : 'No es un tiempo de inicio válida'
         },
         {
           type    : 'startTimeBeforeEnd[' + selector + ']',
-          prompt  : 'Start time is before or same as end time'
+          prompt  : 'Hora de inicio es anterior o igual a la hora de finalización'
         }
       ]
     },
@@ -266,11 +266,11 @@ rulesGenerator = function(components, selector, recurring) {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Please enter an end time'
+          prompt  : 'Por favor, introduzca una hora de finalización'
         },
         {
           type    : 'empty',
-          prompt  : 'Not a valid end time'
+          prompt  : 'No es una hora de finalización válida'
         }
       ]
     },
@@ -279,15 +279,15 @@ rulesGenerator = function(components, selector, recurring) {
       rules : [
         {
           type    : 'emptyRecurring[' + recurring + ']',
-          prompt  : 'Please enter a start date'
+          prompt  : 'Por favor, introduzca una fecha de inicio'
         },
         {
           type    : 'validDate[' + selector + ',' + recurring + ']',
-          prompt  : 'Please enter a valid start date'
+          prompt  : 'Por favor, introduzca una fecha de inicio válida'
         },
         {
           type    : 'startDateBeforeEndDate[' + selector + ',' + recurring + ']',
-          prompt  : 'Start date after end date'
+          prompt  : 'Fecha de unicio despues de fecha final'
         }
       ]
     },
@@ -296,11 +296,11 @@ rulesGenerator = function(components, selector, recurring) {
       rules : [
         {
           type    : 'emptyRecurring[' + recurring + ']',
-          prompt  : 'Please enter an end date'
+          prompt  : 'Por favor, introduzca una fecha de finalización'
         },
         {
           type    : 'validDate[' + selector + ',' + recurring + ']',
-          prompt  : 'Please enter a valid end date'
+          prompt  : 'Por favor, introduzca una fecha de finalización válida'
         }
       ]
     },
@@ -309,7 +309,7 @@ rulesGenerator = function(components, selector, recurring) {
       rules : [
         {
           type    : 'empty',
-          prompt  : 'Text cannot be empty.'
+          prompt  : 'El texto no puede estar vacío .'
         }
       ]
     }
