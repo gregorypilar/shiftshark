@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // init Weekday to Monday
   $('#weekday').attr('weekday', 0);
-  $('#weekDisplay').html('Monday');
+  $('#weekDisplay').html('Lunes');
 
   // date navigation
   $('.dayNavigation').on('click', function() {

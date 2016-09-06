@@ -1,9 +1,9 @@
 // binds all the listeners to the schedule again
 function bindScheduleListeners() {
-  var weekdayName = ['Monday',
-    'Tuesday', 'Wednesday',
-    'Thursday', 'Friday',
-    'Saturday', 'Sunday'];
+  var weekdayName = ['Lunes',
+    'Martes', 'Miércoles',
+    'Jueves', 'Viernes',
+    'Sábado', 'Domingo'];
 
   // open the modify shift modal
   $(document).on('click', '.block-avail', function() {
