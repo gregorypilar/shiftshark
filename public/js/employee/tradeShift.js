@@ -89,7 +89,7 @@ $(document).ready(function() {
       var failure = function(xhr, status, err) {
         console.log(status,err);
         // show an error message
-        $('.ui.error.message').html('<ul class="list"><li>Validation error. Please log in again.</li></ul>');
+        $('.ui.error.message').html('<ul class="list"><li>Error de validacion. Por favor, inicie sesión de nuevo</li></ul>');
         // resize fancybox
         $.fancybox.update();
         // removing loading animation

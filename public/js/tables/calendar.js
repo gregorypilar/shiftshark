@@ -26,7 +26,7 @@
  *   t.someFunction();
  */
 function Calendar (date_start, date_end) {
-  if (!validate_dates(date_start, date_end)) throw "End date before start date.";
+  if (!validate_dates(date_start, date_end)) throw "Fecha de finalización antes de la Fecha de inicio.";
 
   // create HTML table with dates
   var table = create_elem('table');

@@ -72,7 +72,7 @@ $(document).ready(function() {
       // do show error on failure
       var failure = function(xhr, status, err) {
         // show an error message
-        $('.ui.error.message').html('<ul class="list"><li>This availability block overlaps with another availability.</li></ul>');
+        $('.ui.error.message').html('<ul class="list"><li>Esta disponibilidad solapa otra disponibilidad</li></ul>');
         $form.addClass('error');
         // resize fancybox
         $.fancybox.update();

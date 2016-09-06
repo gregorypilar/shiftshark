@@ -15,7 +15,7 @@ function bindScheduleListeners() {
     var startTime = (new Time(avail.startTime)).formatted;
     var endTime = (new Time(avail.endTime)).formatted;
 
-    $('.deleteInfo').html('You have selected <b>' + weekday + '</b> from ' + '<b>' + startTime + '</b> to <b>' + endTime + '</b>.');
+    $('.deleteInfo').html('Usted ha seleccionado <b>' + weekday + '</b> desde ' + '<b>' + startTime + '</b> hasta <b>' + endTime + '</b>.');
     // open the modal via emulated click
     $('#deleteTrigger').trigger('click');
     $this.addClass('active');
@@ -36,7 +36,7 @@ function bindScheduleListeners() {
     // set the start time value
     $('#create .startTime .timePicker').val(time);
 
-    $('.createInfo').html('You have selected <b>' + weekday + '</b>.');
+    $('.createInfo').html('Usted ha seleccionado <b>' + weekday + '</b>.');
 
     // open the modal via emulated click
     $('#createTrigger').trigger('click');

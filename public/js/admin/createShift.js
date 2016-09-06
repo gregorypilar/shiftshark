@@ -36,7 +36,7 @@ $(document).ready(function() {
   $(selector + ' .checkbox.toggle').checkbox('setting', 'onEnable', function(evt) {
     var date = $('#schedule .active').attr('date');
     date = new Date(date);
-    $('.shiftInfo').html('A shift is being created for <b>' + moment(date).format('dddd') + '</b>.');
+    $('.shiftInfo').html('Esta siendo creado un turno para <b>' + moment(date).format('dddd') + '</b>.');
     recurring = true;
     updateRules();
     var $recurring = $(selector + ' .recurring');
@@ -48,7 +48,7 @@ $(document).ready(function() {
   $(selector + ' .checkbox.toggle').checkbox('setting', 'onDisable', function(evt) {
     var date = $('#schedule .active').attr('date');
     date = new Date(date);
-    $('.shiftInfo').html('A shift is being created for <b>' + (new Date(date)).toDateString() + '</b>.');
+    $('.shiftInfo').html('Esta siendo creado un turno para <b>' + (new Date(date)).toDateString() + '</b>.');
     recurring = false;
     updateRules();
     var $recurring = $(selector + ' .recurring');
