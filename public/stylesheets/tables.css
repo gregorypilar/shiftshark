@@ -3,7 +3,7 @@
 .timetable {
   font-family: "Times New Roman", Times, serif;
   border-collapse: collapse;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 table.timetable {
@@ -98,7 +98,7 @@ tr.last-row td {
 
 .calendar > tbody > tr > td { /* main table cell */
   padding: 5px;
-  font-size: 18px
+  font-size: 16px
 }
 
 .calendar > tbody > tr { /* main table row */
