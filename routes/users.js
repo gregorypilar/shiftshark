@@ -121,14 +121,14 @@ router.post('/employees/', function(req, res) {
     }
 
     // send employee an email
-    var body = "Welcome to ShiftShark. An employee account has been \
+    var body = "Welcome to Asignacion de Turnos. An employee account has been \
       created on your behalf. Please login with the following credentials: \n\n\n" +
       "email: " + req.body.email +
       "\npassword: " + generatedPassword;
     res.mailer.sendMail({
       to: req.body.email,
-      replyTo: 'shiftshark@mit.edu',
-      subject: 'ShiftShark Employee Account',
+      replyTo: 'Asignacion de Turnos@mit.edu',
+      subject: 'Asignacion de Turnos Employee Account',
       text: body
     }, function(err, message) {
       if (err) res.status(400).send('EMAIL_ERR');
