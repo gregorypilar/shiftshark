@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     // instantiate the semantic checkboxes and dropdowns
     $('.ui.dropdown').dropdown();

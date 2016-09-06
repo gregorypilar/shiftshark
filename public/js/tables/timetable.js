@@ -31,7 +31,7 @@ function Timetable (table_date) {
   table.date = table_date;
 
   // adjust displayed start/end times
-  var time_start = 8, time_end = 18;
+  var time_start = 8, time_end = 21;
   show_hours_between(table, time_start, time_end);
 
   /**
