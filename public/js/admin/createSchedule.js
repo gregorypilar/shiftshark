@@ -8,7 +8,7 @@ function createShiftInfo($this) {
 
   date = new Date(date);
 
-  var html = 'A shift is being created for <b>' + date.toDateString() + '</b>.';
+  var html = 'Turno para el dia: <b>' + date.toDateString() + '</b>.';
   $('.shiftInfo').html(html);
 }
 

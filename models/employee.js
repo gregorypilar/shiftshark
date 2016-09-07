@@ -19,16 +19,14 @@ var employeeSchema = mongoose.Schema({
     required: true
   },
   congregation: {
-    type: String,
-    required: true
+    type: String    
   },
   email: {
     type: String,
     required: true
   },
   phone: {
-    type: String,
-    required: true
+    type: String    
   },
   schedule: {
     type: mongoose.Schema.ObjectId,

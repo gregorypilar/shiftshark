@@ -46,11 +46,14 @@ router.post('/employers/', function(req, res) {
     firstName: String(req.body.first_name),
     lastName: String(req.body.last_name),
     username: String(req.body.email),
+    phone: String(req.body.phone),
+    congregation: String(req.body.congregation),
     employer: true
   };
   // create Employee
   Employee.register(new Employee(userAttributes), String(req.body.password), function(err, user) {
     if (err) {
+      res.send(err)
       res.status(400).send('USER_EXISTS');
     } else {
       // create Schedule owner by this employee
@@ -112,9 +115,14 @@ router.post('/employees/', function(req, res) {
     firstName: req.body.first_name,
     lastName: req.body.last_name,
     username: req.body.email,
-    schedule: req.user.schedule // use employer's schedule
+    email: req.body.email,
+    schedule: req.user.schedule, // use employer's schedule
+    phone: req.body.phone,
+    congregation: req.body.congregation,
   };
+
   var generatedPassword = words({ min: 3, max: 5 }).join("");
+
   Employee.register(new Employee(userAttributes), generatedPassword, function(err, user) {
     if (err) {
       return res.status(400).send('USER_EXISTS');
@@ -125,19 +133,22 @@ router.post('/employees/', function(req, res) {
       creada en su nombre. Por favor, inicie sesión con las siguientes credenciales: \n\n\n" +
       "email: " + req.body.email +
       "\ncontraseña: " + generatedPassword;
-    res.mailer.sendMail({
-      to: req.body.email,
-      replyTo: 'gregoryg3@gmail.com',
-      subject: 'Asignacion de Turnos',
-      text: body
-    }, function(err, message) {
-      if (err) res.status(400).send('EMAIL_ERR');
-    });
+    // res.mailer.sendMail({
+    //   to: req.body.email,
+    //   replyTo: 'gregoryg3@gmail.com',
+    //   subject: 'Asignacion de Turnos',
+    //   text: body
+    // }, function(err, message) {
+    //   if (err) res.status(400).send('EMAIL_ERR');
+    // });
     return res.json({ employee: {
       _id: user._id,
       firstName: user.firstName,
       lastName: user.lastName,
-      username: user.username
+      username: user.username,
+      phone: user.phone,
+      email: req.body.email,
+      congregation: user.congregation,
     } });
   });
 });

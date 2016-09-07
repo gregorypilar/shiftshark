@@ -51,14 +51,21 @@ $(document).ready(function() {
       var firstNameField = $('.add.employee.form [name="firstname"]');
       var lastNameField  = $('.add.employee.form [name="lastname"]');
       var emailField     = $('.add.employee.form [name="email"]');
+      var congField      = $('.add.employee.form [name="congregation"]');
+      var phoneField     = $('.add.employee.form [name="phone"]');
 
       var firstName = firstNameField.val();
       var lastName  = lastNameField.val();
       var email     = emailField.val().toLowerCase();
+      var cong      = congField.val();
+      var phone     = phoneField.val();
+
       var data      = {
                         first_name : firstName,
                         last_name  : lastName,
-                        email      : email
+                        email      : email,
+                        congregation    : cong,
+                        phone      : phone
                       };
 
       var success = function (result, status, xhr) {
