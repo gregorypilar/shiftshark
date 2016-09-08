@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
+var moment = require('moment');
 //var secrets = require('./secrets'); // passwords
 
 var session = require('express-session');
@@ -29,14 +30,7 @@ var Availability = require('./models/availability');
 // CONNECT DB //
 ////////////////
 
-var connection_string = 'gpmongodb.eastus2.cloudapp.azure.com:27017';
-
-if (process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
-    connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ':' +
-    process.env.OPENSHIFT_MONGODB_DB_PASSWORD + '@' +
-    process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
-    process.env.OPENSHIFT_MONGODB_DB_PORT + '/shiftshark'; // CHANGE LATER!
-}
+var connection_string = 'gpmongodb.eastus2.cloudapp.azure.com:27017/shiftshark';
 
 var db = mongoose.connect(connection_string);
 
@@ -61,6 +55,8 @@ passport.deserializeUser(Employee.deserializeUser());
 /////////////
 
 var app = express();
+//
+moment.locale('es');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

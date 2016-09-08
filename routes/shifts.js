@@ -6,6 +6,7 @@ var Avail = require('../models/availability');
 var Series = require('../models/series');
 var Position = require('../models/position');
 
+
 var fieldsToReturn = 'assignee claimant position date startTime endTime trading';
 var userFieldsToHide = '-hash -salt -schedule';
 

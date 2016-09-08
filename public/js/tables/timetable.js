@@ -303,7 +303,8 @@ function extend_hours_right (table, hour) {
  * Returns: String
  */
 function name_string (employee) {
-  return employee.firstName[0] + '. ' + employee.lastName;
+  //return employee.firstName[0] + '. ' + employee.lastName;
+  return employee.firstName + ' ' + employee.lastName;
 }
 
 /**

@@ -1,17 +1,17 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var addForm = $('.add.employee.form');
 
   // form validation rules
   var rules = {
-    email   : {
+    email: {
       identifier: 'email',
       rules: [
         {
-          type  : 'empty',
+          type: 'empty',
           prompt: 'Por favor, introduzca su dirección de correo electrónico'
         },
         {
-          type  : 'email',
+          type: 'email',
           prompt: 'Por favor, introduzca una dirección válida de correo electrónico'
         }
       ]
@@ -20,7 +20,7 @@ $(document).ready(function() {
       identifier: 'firstname',
       rules: [
         {
-          type  : 'empty',
+          type: 'empty',
           prompt: 'Por favor, introduzca un nombre'
         }
       ]
@@ -29,7 +29,7 @@ $(document).ready(function() {
       identifier: 'lastname',
       rules: [
         {
-          type  : 'empty',
+          type: 'empty',
           prompt: 'Por favor, introduzca un nombre'
         }
       ]
@@ -38,35 +38,64 @@ $(document).ready(function() {
 
   var settings = {
     inline: false,
-    on    : 'blur'
+    on: 'blur'
   };
 
   addForm.form(rules, settings);
 
-  var addEmployee = function() {
+  var getAllEmployees = function () {  
+
+  var failure = function (xhr, status, err) {
+        addForm.removeClass('loading');
+        addForm.removeClass('success');
+        $('.add.employee.form .ui.error.message').html('<ul class="list"><li>' + err + '</li></ul>');
+        $.fancybox.update();
+        addForm.addClass('error');
+        (xhr, status, err);
+      };
+
+    client_employee_get_all(function (data) {
+      console.log(data);
+        var employeeNamesHtml = "";
+        var employees = data.employees;
+        var employee;
+        for (var i = 0; employee = employees[i]; i++) {
+          var employeeName = employee.firstName + ' ' + employee.lastName;
+          employeeNamesHtml += "<div class='item' employeeId='" + employee._id + "'>" + employeeName + "</div>"
+        }
+
+        $('.employeeList').html(employeeNamesHtml);
+        $('.dropdown').dropdown();
+
+           
+    }, failure)
+  };
+
+
+  var addEmployee = function () {
     var isValid = addForm.form('validate form');
     $.fancybox.update();
     (isValid);
     if (isValid) {
       var firstNameField = $('.add.employee.form [name="firstname"]');
-      var lastNameField  = $('.add.employee.form [name="lastname"]');
-      var emailField     = $('.add.employee.form [name="email"]');
-      var congField      = $('.add.employee.form [name="congregation"]');
-      var phoneField     = $('.add.employee.form [name="phone"]');
+      var lastNameField = $('.add.employee.form [name="lastname"]');
+      var emailField = $('.add.employee.form [name="email"]');
+      var congField = $('.add.employee.form [name="congregation"]');
+      var phoneField = $('.add.employee.form [name="phone"]');
 
       var firstName = firstNameField.val();
-      var lastName  = lastNameField.val();
-      var email     = emailField.val().toLowerCase();
-      var cong      = congField.val();
-      var phone     = phoneField.val();
+      var lastName = lastNameField.val();
+      var email = emailField.val().toLowerCase();
+      var cong = congField.val();
+      var phone = phoneField.val();
 
-      var data      = {
-                        first_name : firstName,
-                        last_name  : lastName,
-                        email      : email,
-                        congregation    : cong,
-                        phone      : phone
-                      };
+      var data = {
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        congregation: cong,
+        phone: phone
+      };
 
       var success = function (result, status, xhr) {
         $('.ui.error.message').html('');
@@ -74,27 +103,16 @@ $(document).ready(function() {
         $('.fancybox-close').trigger('click');
         firstNameField.val("");
         lastNameField.val("");
-        firstNameField.val("");
-
-        var employeeNamesHtml = "";
-        var employees = getAllEmployees();
-        var employee;
-        for (var i=0; employee=employees[i]; i++) {
-          var employeeName = employee.firstName + ' ' + employee.lastName;
-          employeeNamesHtml += "<div class='item' employeeId='" + employee._id + "'>" + employeeName + "</div>"
-        }
-
-        $('.employeeList').html(employeeNamesHtml);
-        $('.dropdown').dropdown();
+        firstNameField.val("");    
       };
 
-      var failure = function(xhr, status, err) {
+      var failure = function (xhr, status, err) {
         addForm.removeClass('loading');
         addForm.removeClass('success');
         $('.add.employee.form .ui.error.message').html('<ul class="list"><li>' + err + '</li></ul>');
         $.fancybox.update();
         addForm.addClass('error');
-        (xhr,status,err);
+        (xhr, status, err);
       };
 
       addForm.addClass('loading');
@@ -102,8 +120,8 @@ $(document).ready(function() {
     }
   };
 
-  $('.ui.form').on('keyup', function(e) {
-    if(e.keyCode == 13) {
+  $('.ui.form').on('keyup', function (e) {
+    if (e.keyCode == 13) {
       addEmployee();
       return false;
     } else {
@@ -111,7 +129,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.add.employee.form .submit.button').on('click', function() {
+  $('.add.employee.form .submit.button').on('click', function () {
     addEmployee();
   });
 });

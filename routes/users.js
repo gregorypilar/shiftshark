@@ -46,6 +46,7 @@ router.post('/employers/', function(req, res) {
     firstName: String(req.body.first_name),
     lastName: String(req.body.last_name),
     username: String(req.body.email),
+    email: String(req.body.email),
     phone: String(req.body.phone),
     congregation: String(req.body.congregation),
     employer: true
@@ -129,18 +130,19 @@ router.post('/employees/', function(req, res) {
     }
 
     // send employee an email
-    var body = "Bienvenido a Asignacion de Turnos. Una cuenta ha sido \
-      creada en su nombre. Por favor, inicie sesión con las siguientes credenciales: \n\n\n" +
-      "email: " + req.body.email +
-      "\ncontraseña: " + generatedPassword;
-    // res.mailer.sendMail({
-    //   to: req.body.email,
-    //   replyTo: 'gregoryg3@gmail.com',
-    //   subject: 'Asignacion de Turnos',
-    //   text: body
-    // }, function(err, message) {
-    //   if (err) res.status(400).send('EMAIL_ERR');
-    // });
+    var body = "Bienvenido al sistema de turnos para la feria del libro.\n\n"+ 
+      "Una cuenta ha sido creada en su nombre. Por favor, inicie sesión con las siguientes credenciales: \n" +
+      "Email: " + req.body.email +
+      "\nContraseña: " + generatedPassword
+      +"\n\n\nEl Sitio se encuenta en : http://turnosstand.azurewebsites.net/";
+    res.mailer.sendMail({
+      to: req.body.email,
+      replyTo: 'gregoryg3@gmail.com',
+      subject: 'Asignacion de Turnos',
+      text: body
+    }, function(err, message) {
+      if (err) res.status(400).send('EMAIL_ERR');
+    });
     return res.json({ employee: {
       _id: user._id,
       firstName: user.firstName,

@@ -114,7 +114,7 @@ $(document).ready(function() {
       var signupFailure = function(xhr, status, err) {
         loginForm.removeClass('loading');
         loginForm.removeClass('success');
-        $('.ui.error.message').html('<ul class="list"><li>Error de firmar para arriba. Por favor, inténtelo de nuevo</li></ul>');
+        $('.ui.error.message').html('<ul class="list"><li>Error. Por favor, inténtelo de nuevo</li></ul>');
         loginForm.addClass('error');
       };
 
