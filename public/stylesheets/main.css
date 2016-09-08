@@ -209,7 +209,8 @@ label.colon {
 }
 
 .fancybox-inner {
-    overflow-x: hidden !important;
+    overflow-x :hidden !important;     
+    overflow :visible !important;       
 }
 
 .ownerIndicator, .shiftInfo, .createInfo, .deleteInfo {
