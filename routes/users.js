@@ -135,14 +135,14 @@ router.post('/employees/', function(req, res) {
       "Email: " + req.body.email +
       "\nContraseña: " + generatedPassword
       +"\n\n\nEl Sitio se encuenta en : http://turnosstand.azurewebsites.net/";
-    res.mailer.sendMail({
-      to: req.body.email,
-      replyTo: 'gregoryg3@gmail.com',
-      subject: 'Asignacion de Turnos',
-      text: body
-    }, function(err, message) {
-      if (err) res.status(400).send('EMAIL_ERR');
-    });
+    // res.mailer.sendMail({
+    //   to: req.body.email,
+    //   replyTo: 'gregoryg3@gmail.com',
+    //   subject: 'Asignacion de Turnos',
+    //   text: body
+    // }, function(err, message) {
+    //   if (err) res.status(400).send('EMAIL_ERR');
+    // });
     return res.json({ employee: {
       _id: user._id,
       firstName: user.firstName,
