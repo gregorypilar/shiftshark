@@ -172,7 +172,7 @@ router.get('/employees/', function(req, res) {
   // check permissions
   if (! req.user.employer) return res.status(401).end();
 
-  Employee.find({ schedule: req.user.schedule }, 'firstName lastName username employer', function(err, employees) {
+  Employee.find({ schedule: req.user.schedule }, 'firstName lastName username employer',{sort:{firstName:1}}, function(err, employees) {
     if (err) return res.status(500).end();
     return res.json({ employees: employees });
   });

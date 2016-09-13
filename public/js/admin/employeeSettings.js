@@ -54,21 +54,19 @@ $(document).ready(function () {
         (xhr, status, err);
       };
 
-    client_employee_get_all(function (data) {
-      console.log(data);
+    
         var employeeNamesHtml = "";
-        var employees = data.employees;
+        var employees =  client_employee_get_all().data.employees;
+        employees.sort();
         var employee;
-        for (var i = 0; employee = employees[i]; i++) {
+
+       for (var i = 0; employee = employees[i]; i++) {
           var employeeName = employee.firstName + ' ' + employee.lastName;
           employeeNamesHtml += "<div class='item' employeeId='" + employee._id + "'>" + employeeName + "</div>"
         }
 
         $('.employeeList').html(employeeNamesHtml);
-        $('.dropdown').dropdown();
-
-           
-    }, failure)
+        $('.dropdown').dropdown();    
   };
 
 

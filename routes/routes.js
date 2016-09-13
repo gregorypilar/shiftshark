@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
     res.render('auth', {formType:'login', employeeView:true});
   } else if (req.user.employer === true) {
     // employer
-    Employee.find({ schedule: req.user.schedule }, 'firstName lastName username', function(err, employees) {
+    Employee.find({ schedule: req.user.schedule }, 'firstName lastName username',{sort:{firstName:1}}, function(err, employees) {
       if (err) return res.status(500).end();
 
       Shift.find({ schedule: req.user.schedule }, function(err, shifts) {
