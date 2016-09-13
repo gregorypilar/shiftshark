@@ -15,6 +15,7 @@ router.get('/', function(req, res) {
     res.render('auth', {formType:'login', employeeView:true});
   } else if (req.user.employer === true) {
     // employer
+
     Employee.find({ schedule: req.user.schedule }, 'firstName lastName username congregation',{sort:{firstName:1}}, function(err, employees) {
       if (err) return res.status(500).end();
 
