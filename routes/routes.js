@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
             if (err) return res.status(500).end();
             if (positions == undefined || positions == null) { positions = []; }
             // determine date
-            var date = new Date(2016,08,19); // Fecha de inicio de la feria
+            var date = new Date(2016,08,19);  // Fecha de inicio de la feria
             if (req.query.date !== undefined && req.query.date !== null) {
               date = new Date(String(req.query.date));
             }
